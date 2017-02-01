@@ -1,15 +1,7 @@
-import { START_CHANGE_COLOR, RECEIVE_NEW_COLOR } from '../actions'
+import { combineReducers } from 'redux'
+import Head from './Head'
+import Body from './Body'
+import Footer from './Footer'
 
-const rootReducer = (state = {headColor:'pink', bodyColor:'lightblue', footerColor:'gray'}, action) => {
-  switch (action.type) {
-  case START_CHANGE_COLOR:
-    return Object.assign({}, state, {[action.payload+'Color']: 'white'})
-  case RECEIVE_NEW_COLOR:
-    return Object.assign({}, state, {[action.payload.part+'Color']: action.payload.color})
-  default:
-    return state
-  }
-}
-
+const rootReducer = combineReducers({head: Head, body: Body, footer: Footer})
 export default rootReducer
-

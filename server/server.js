@@ -65,9 +65,9 @@ function handleRender(req, res) {
   Promise.all([p1, p2, p3]).then(([head, body, footer]) => {
     // Compile an initial state
     const preloadedState = {
-      headColor: head.color,
-      bodyColor: body.color,
-      footerColor: footer.color
+      head: { color: head.color},
+      body: { color: body.color},
+      footer: { color: footer.color}
     }
 
     // Create a new Redux store instance
