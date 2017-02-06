@@ -1,7 +1,7 @@
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import Pane from '../components/Pane'
-import { fetchColor } from '../actions/Footer'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import Footer from './view';
+import { fetchColor } from './actions';
 
 
 const mapStateToProps = (state) => {
@@ -10,12 +10,13 @@ const mapStateToProps = (state) => {
     height: '120px',
     color: state.footer.color,
     isUpdating: state.footer.isUpdating
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({
     changeColor: fetchColor
-  }, dispatch)
+  }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Pane)
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);
+

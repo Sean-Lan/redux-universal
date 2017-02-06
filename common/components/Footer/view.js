@@ -1,11 +1,11 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react';
 
-const Pane = ({name, color, changeColor, isUpdating, height}) => {
+const Footer = ({name, color, changeColor, isUpdating, height}) => {
   const style = {
     height: height,
     opacity: isUpdating ? 0.4 : 1.0,
     backgroundColor: color
-  }
+  };
 
   return (
     <div>
@@ -13,15 +13,15 @@ const Pane = ({name, color, changeColor, isUpdating, height}) => {
         {isUpdating ? 'updating...' : color + ' ' + name}
       </h1>
     </div>
-  )
-}
+  );
+};
 
-Pane.propTypes = {
+Footer.propTypes = {
   isUpdating: PropTypes.bool,
   name: PropTypes.string.isRequired,
   height: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   changeColor: PropTypes.func.isRequired
-}
+};
 
-export default Pane
+export default Footer;
